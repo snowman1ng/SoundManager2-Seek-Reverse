@@ -522,3 +522,118 @@ this.reset = function();
 	line 2322
 
 -------------------------------------------------------------------------
+/**
+     * Pauses sound playback.
+     *
+     * @return {SMSound} The SMSound object
+     */
+
+    this.pause = function(_bCallFlash);
+	line 2400
+
+-------------------------------------------------------------------------
+/**
+     * Resumes sound playback.
+     *
+     * @return {SMSound} The SMSound object
+     */
+
+    /**
+     * When auto-loaded streams pause on buffer full they have a playState of 0.
+     * We need to make sure that the playState is set to 1 when these streams "resume".
+     * When a paused stream is resumed, we need to trigger the onplay() callback if it
+     * hasn't been called already. In this case since the sound is being played for the
+     * first time, I think it's more appropriate to call onplay() rather than onresume().
+     */
+
+    this.resume = function();
+	line 2440
+
+--------------------------------------------------------------------------
+/**
+     * Toggles sound playback.
+     *
+     * @return {SMSound} The SMSound object
+     */
+
+    this.togglePause = function();
+	line 2490
+
+-------------------------------------------------------------------------
+/**
+     * Sets the panning (L-R) effect.
+     *
+     * @param {number} nPan The pan value (-100 to 100)
+     * @return {SMSound} The SMSound object
+     */
+
+    this.setPan = function(nPan, bInstanceOnly);
+	line 2518
+
+-------------------------------------------------------------------------
+/**
+     * Sets the volume.
+     *
+     * @param {number} nVol The volume value (0 to 100)
+     * @return {SMSound} The SMSound object
+     */
+
+    this.setVolume = function(nVol, _bInstanceOnly)
+	line 2550
+
+-------------------------------------------------------------------------
+/**
+     * Mutes the sound.
+     *
+     * @return {SMSound} The SMSound object
+     */
+
+    this.mute = function()
+	line 2600
+
+-------------------------------------------------------------------------
+/**
+     * Unmutes the sound.
+     *
+     * @return {SMSound} The SMSound object
+     */
+
+    this.unmute = function();
+	line 2620
+
+-------------------------------------------------------------------------
+/**
+     * Toggles the muted state of a sound.
+     *
+     * @return {SMSound} The SMSound object
+     */
+
+    this.toggleMute = function();
+	line 2641
+
+-------------------------------------------------------------------------
+/**
+     * Registers a callback to be fired when a sound reaches a given position during playback.
+     *
+     * @param {number} nPosition The position to watch for
+     * @param {function} oMethod The relevant callback to fire
+     * @param {object} oScope Optional: The scope to apply the callback to
+     * @return {SMSound} The SMSound object
+     */
+
+    this.onPosition = function(nPosition, oMethod, oScope);
+	line 2656
+
+--------------------------------------------------------------------------
+/**
+     * Removes registered callback(s) from a sound, by position and/or callback.
+     *
+     * @param {number} nPosition The position to clear callback(s) for
+     * @param {function} oMethod Optional: Identify one callback to be removed when multiple listeners exist for one position
+     * @return {SMSound} The SMSound object
+     */
+
+    this.clearOnPosition = function(nPosition, oMethod);
+	line 2682
+
+-------------------------------------------------------------------------
