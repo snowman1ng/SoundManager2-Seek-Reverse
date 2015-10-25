@@ -1,66 +1,74 @@
-<!doctype html>
-<html>	
-  <head>
-    <title>Testing SoundManager2</title>
-  </head>
-  <body>
-    <p>Does this work?</p>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>  
+        <title>SoundManager Testing
+        </title>   
+    </head>
+    <body>
+        <p>SoundManager Testing</p>
+        <script type="text/javascript" src="../script/soundmanager2.js"></script>
 
-    <!-- include SM2 library (see builds for optimized versions) -->
-    <script type="text/javascript" src="../script/soundmanager2.js"></script>
+ 
+<script type="text/javascript">
+    var mp3Sound;
+    var wavSound;
+          
 
-    <!-- configure SM2 for your use -->
-    <script type="text/javascript">
-
-      var sound = soundManager.setup({
-
-        // location: path to SWF files, as needed (SWF file name is appended later.)
-
+      
+    soundManager.setup({
         url: '/path/to/swf-files/',
-
-        // optional: version of SM2 flash audio API to use (8 or 9; default is 8 if omitted, OK for most use cases.)
-        // flashVersion: 9,
-
-        // use soundmanager2-nodebug-jsmin.js, or disable debug mode (enabled by default) after development/testing
-        // debugMode: false,
-
-        // good to go: the onready() callback
 
         onready: function() {
 
-          // SM2 has started - now you can create and play sounds!
+        mp3Sound = soundManager.createSound({
+              id: 'aSound', // optional: provide your own unique id
+             url: 'Kalimba.mp3'
+         });
+         
+         wavSound = soundManager.createSound({
+              id: 'bSound', // optional: provide your own unique id
+             url: 'traditional.wav'
+         });
+         },
+         ontimeout: function() {
+         }
+    });
+    
 
-          var mySound = soundManager.createSound({
-            id: 'aSound', // optional: provide your own unique id
-            url: 'Kalimba.mp3'
-            // onload: function() { console.log('sound loaded!', this); }
-            // other options here..
-          });
+ function mp3Play(){ 
+     mp3Sound.pause();
+     mp3Sound.play();
+     }
+     
 
-          mySound.setPosition(150000); //this line sets the position to a point within the song in milliseconds
-            //check line 2322 in the js file to find setPosition function
-          mySound.play();
+ 
+ function mp3Pause(){ 
+     mp3Sound.pause();
+ };
+ 
+ function wavPlay(){ 
+     wavSound.pause();
+     wavSound.play();
+ }
+ function wavPause(){ 
+     wavSound.pause();
+ };
 
-        },
+        </script>
 
-        // optional: ontimeout() callback for handling start-up failure
+        <form>
+            <input type="button"  value ="play MP3" onclick ="mp3Play()">
+            <input type="button"  value ="stop MP3" onclick ="mp3Pause()">
+        </form>
+        <form>
+            <input type="button"  value ="play WAV" onclick ="wavPlay()">
+            <input type="button"  value ="stop WAV" onclick ="wavPause()">
+        </form>
 
-        ontimeout: function() {
-
-          // Hrmm, SM2 could not start. Missing SWF? Flash blocked? No HTML5 audio support? Show an error, etc.?
-          // See the flashblock demo when you want to start getting fancy.
-
-        }
-      }); //end of soundManager.setup()
-      //sound.mySound.pause();
-      //var tog = document.getElementById('toggle');
-      //var aSound = sound.getSoundById('aSound');
-      //tog.addEventListener('click', toggleIt());
-      //toggleIt = function() {
-        //soundManager.pause('aSound');
-      //  alert('HEY');
-      //};
-    </script>
-    <button id="toggle">Toggle Pause</button>
-  </body>
+    </body>
 </html>
