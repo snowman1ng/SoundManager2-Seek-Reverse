@@ -1,74 +1,46 @@
+<!--  Test page for CIS3238 Final Project
+      Descr: Using soundmanager2
+      Group: Keith Rasweiler, Dau Lam, Yaotian He -->
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>  
-        <title>SoundManager Testing
-        </title>   
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SoundManager Testing</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- jQuery library for support -->
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <!-- soundmanager2 library -->
+        <script type="text/javascript" src="../script/soundmanager2.js"></script>
+        <!-- Custom js file -->
+        <script type="text/javascript" src="main.js"></script>
     </head>
     <body>
-        <p>SoundManager Testing</p>
-        <script type="text/javascript" src="../script/soundmanager2.js"></script>
-
- 
-<script type="text/javascript">
-    var mp3Sound;
-    var wavSound;
-          
-
-      
-    soundManager.setup({
-        url: '/path/to/swf-files/',
-
-        onready: function() {
-
-        mp3Sound = soundManager.createSound({
-              id: 'aSound', // optional: provide your own unique id
-             url: 'Kalimba.mp3'
-         });
-         
-         wavSound = soundManager.createSound({
-              id: 'bSound', // optional: provide your own unique id
-             url: 'traditional.wav'
-         });
-         },
-         ontimeout: function() {
-         }
-    });
-    
-
- function mp3Play(){ 
-     mp3Sound.pause();
-     mp3Sound.play();
-     }
-     
-
- 
- function mp3Pause(){ 
-     mp3Sound.pause();
- };
- 
- function wavPlay(){ 
-     wavSound.pause();
-     wavSound.play();
- }
- function wavPause(){ 
-     wavSound.pause();
- };
-
-        </script>
-
+        <h1>SoundManager Testing</h1>
         <form>
-            <input type="button"  value ="play MP3" onclick ="mp3Play()">
-            <input type="button"  value ="stop MP3" onclick ="mp3Pause()">
+            <input type="button"  value="play MP3" onclick="mp3Play()">
+            <input type="button"  value="Go 150 sec in @mp3 file and play" onclick="mp3PlayLate()">
+            <input type="button"  value="stop MP3" onclick="mp3Pause()">
+            <br>
+            <input type="button"  value="play WAV" onclick="wavPlay()">
+            <input type="button"  value="stop WAV" onclick="wavPause()">
         </form>
-        <form>
-            <input type="button"  value ="play WAV" onclick ="wavPlay()">
-            <input type="button"  value ="stop WAV" onclick ="wavPause()">
-        </form>
+
+        <div class="modal">
+      	  <label for="modal-1">
+      	    <div class="modal-trigger">Click me to input text / time?</div>
+      	  </label>
+      	  <input class="modal-state" id="modal-1" type="checkbox" />
+      	  <div class="modal-fade-screen">
+      	    <div class="modal-inner">
+      	      <div class="modal-close" for="modal-1"></div>
+      	      <h1>A pop-up text box</h1>
+      	      <p class="modal-intro">Time</p>
+      	      <p class="modal-content">
+                <input type="number" placeholder="Enter some numbers">
+              </p>
+      	    </div>
+      	  </div>
+      	</div>
 
     </body>
 </html>
