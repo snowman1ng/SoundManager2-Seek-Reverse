@@ -1,10 +1,15 @@
 @charset "UTF-8";
+@import 'bar-ui.css';
 html {
   box-sizing: border-box;
 }
 body {
   background-color: skyblue;
   font-family: sans-serif;
+}
+footer {
+  position: absolute;
+  bottom: 0;
 }
 input {
   background-color: #477DCA;
@@ -201,5 +206,30 @@ ms-input-placeholder {
 .modal-open {
   overflow: hidden;
 }
+
+/* Music Player UI */
+.sm2-bar-ui {
+ font-size: 16px;
+}
+
+.sm2-bar-ui .sm2-main-controls,
+.sm2-bar-ui .sm2-playlist-drawer {
+ background-color: #ccb700;
+}
+
+.sm2-b
+ar-ui .sm2-inline-texture {
+ background: transparent;
+}
+
+.seek {
+  background-image: url(../image/time36.png);
+  /* background-image: none, url(../image/icomoon/entypo-25px-ffffff/SVG/last.svg); */
+ }
+
+.reverse {
+   background-image: url(../image/circulararrow10.png);
+   /* background-image: none, url(../image/icomoon/entypo-25px-ffffff/SVG/last.svg); */
+  }
 
 /*# sourceMappingURL=style.css.map */

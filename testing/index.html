@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <title>SoundManager Testing</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
         <!-- jQuery library for support -->
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <!-- soundmanager2 library -->
@@ -43,5 +43,79 @@
       	  </div>
       	</div>
 
+        <h2>Sample UI Player</h2>
+        <div class="sm2-bar-ui">
+          <!-- Wrapper -->
+          <div class="bd sm2-main-controls">
+            <!-- Options -->
+            <div class="sm2-inline-texture"></div>
+            <div class="sm2-inline-gradient"></div>
+            <!-- Play/pause Button -->
+            <div class="sm2-inline-element sm2-button-element">
+              <div class="sm2-button-bd">
+                <a href="#play" class="sm2-inline-button play-pause">Play / pause</a>
+              </div>
+            </div>
+            <!-- Seek Button -->
+            <div class="sm2-inline-element sm2-button-element">
+              <div class="sm2-button-bd">
+                <a href="#seek" title="Seek" class="sm2-inline-button seek">&lt; seek time</a>
+              </div>
+            </div>
+            <!-- Reverse Button -->
+            <div class="sm2-inline-element sm2-button-element">
+              <div class="sm2-button-bd">
+                <a href="#rev" title="Reverse" class="sm2-inline-button reverse">&lt; Reverse Play</a>
+              </div>
+            </div>
+            <!-- Status Wrapper Button -->
+            <div class="sm2-inline-element sm2-inline-status">
+              <!-- Show playlist -->
+              <div class="sm2-playlist">
+                <div class="sm2-playlist-target">
+                  <!-- File name -->
+                  A MUSIC FILE TODO
+                  <!-- playlist <ul> + <li> markup will be injected here -->
+                  <!-- if you want default / non-JS content, you can put that here. -->
+                  <noscript><p>JavaScript is required.</p></noscript>
+                </div>
+              </div>
+              <div class="sm2-progress">
+                <div class="sm2-row">
+                  <div class="sm2-inline-time">0:00</div>
+                  <div class="sm2-progress-bd">
+                    <div class="sm2-progress-track">
+                      <div class="sm2-progress-bar"></div>
+                      <div class="sm2-progress-ball"><div class="icon-overlay"></div></div>
+                    </div>
+                  </div>
+                  <div class="sm2-inline-duration">5:00</div>
+                </div>
+              </div>
+            </div>
+            <!-- Previos Button -->
+            <div class="sm2-inline-element sm2-button-element">
+              <div class="sm2-button-bd">
+                <a href="#prev" title="Previous" class="sm2-inline-button previous">&lt; previous</a>
+               </div>
+            </div>
+            <!-- Next Button -->
+            <div class="sm2-inline-element sm2-button-element">
+              <div class="sm2-button-bd">
+                <a href="#next" title="Next" class="sm2-inline-button next">&gt; next</a>
+              </div>
+            </div>
+            <!-- Volume Button -->
+            <div class="sm2-inline-element sm2-button-element sm2-volume">
+              <div class="sm2-button-bd">
+                <span class="sm2-inline-button sm2-volume-control volume-shade"></span>
+                <a href="#volume" class="sm2-inline-button sm2-volume-control">volume</a>
+              </div>
+            </div>
+          </div> <!-- END CONTROLS -->
+        </div><!-- END UI BAR -->
+
+        <footer><div>'Time36' and 'Circular Arrow' icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a><br>
+                      Other icons given by the SoundManager's Bar-UI package</div></footer>
     </body>
 </html>
