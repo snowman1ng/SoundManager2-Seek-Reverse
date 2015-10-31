@@ -32,7 +32,12 @@ function mp3PlayLate(){
   gotoTime(mp3Sound, 150000); // works
   mp3Sound.play();
 }
-
+function seekPosition(){
+	  mp3Sound.pause();
+ var position  =  document.getElementById("positionText").value * 1000;
+  gotoTime(mp3Sound, position); // works
+  mp3Sound.play();
+}
 /* function to Play a mp3 file */
 function mp3Play(){
   mp3Sound.pause();
