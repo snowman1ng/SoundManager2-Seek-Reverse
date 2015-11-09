@@ -222,14 +222,21 @@ ar-ui .sm2-inline-texture {
  background: transparent;
 }
 
-.seek {
+.sm2-inline-button.seek {
   background-image: url(../image/time36.png);
   /* background-image: none, url(../image/icomoon/entypo-25px-ffffff/SVG/last.svg); */
  }
 
-.reverse {
+.sm2-inline-button.reverse {
    background-image: url(../image/circulararrow10.png);
    /* background-image: none, url(../image/icomoon/entypo-25px-ffffff/SVG/last.svg); */
   }
+
+.sm2-sm-input {
+  width: 45px;
+  font-size: 0.8em;
+  padding: 0.1em;
+  margin: 0;
+}
 
 /*# sourceMappingURL=style.css.map */
