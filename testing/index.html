@@ -11,8 +11,11 @@
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <!-- soundmanager2 library -->
         <script type="text/javascript" src="../script/soundmanager2.js"></script>
+        <script src="bar-ui.js"></script>
         <!-- Custom js file -->
         <script type="text/javascript" src="main.js"></script>
+
+
     </head>
     <body>
         <h1>SoundManager Testing</h1>
@@ -37,12 +40,19 @@
       	      <p class="modal-intro">Time</p>
       	      <p class="modal-content">
                 <input type="number" id="positionText" placeholder="Enter numbers">
-				 <input type="button"  value="Seek by second"  onclick="seekPosition()">
+				        <input type="button"  value="Seek by second"  onclick="seekPosition()">
               </p>
       	    </div>
       	  </div>
       	</div>
-
+ <style>
+ .sm2-sm-input {
+    width: 45px;
+    font-size: 0.8em;
+    padding: 0.1em;
+    margin: 0;
+    }
+</style>
         <h2>Sample UI Player</h2>
         <div class="sm2-bar-ui">
           <!-- Wrapper -->
@@ -58,8 +68,9 @@
             </div>
             <!-- Seek Button -->
             <div class="sm2-inline-element sm2-button-element">
-              <div class="sm2-button-bd">
-                <a href="#seek" title="Seek" class="sm2-inline-button seek">&lt; seek time</a>
+              <input id="seek-time" class="sm2-sm-input" type="number" value="50" min="0" max="1000000">
+              <div id="seek-btn" class="sm2-button-bd">
+                <a href="#seek" title="Seek in seconds" class="sm2-inline-button seek">&lt; seek time</a>
               </div>
             </div>
             <!-- Reverse Button -->
@@ -74,7 +85,6 @@
               <div class="sm2-playlist">
                 <div class="sm2-playlist-target">
                   <!-- File name -->
-                  A MUSIC FILE TODO
                   <!-- playlist <ul> + <li> markup will be injected here -->
                   <!-- if you want default / non-JS content, you can put that here. -->
                   <noscript><p>JavaScript is required.</p></noscript>
@@ -113,6 +123,21 @@
               </div>
             </div>
           </div> <!-- END CONTROLS -->
+          
+          <!-- Playlist of Songs -->
+          <div class="bd sm2-playlist-drawer sm2-element">
+            <div class="sm2-inline-texture">
+              <div class="sm2-box-shadow"></div>
+            </div>
+            <!-- playlist content is mirrored here -->
+            <div class="sm2-playlist-wrapper">
+              <ul class="sm2-playlist-bd">
+                <li><a href="Kalimba.mp3">Kalimba MP3</a></li>
+                <li><a href="traditional.wav">Traditional WAV</a></li>
+              </ul>
+            </div>
+          </div>
+
         </div><!-- END UI BAR -->
 
         <footer><div>'Time36' and 'Circular Arrow' icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a><br>

@@ -87,7 +87,29 @@ function modalStopProp() {
 
 /* when document is ready, load these */
 $(function() {
+      // console.log(window.sm2BarPlayers[0]);
+      // window.sm2BarPlayers[0].makeSound('Kalimba.mp3');
+      // window.sm2BarPlayers.on = {
+      //   play:  mp3Sound
+      // };
+
 		  openModal();
 		  closeModal();
 		  modalStopProp();
+
+      $("#seek-btn").on("click", function(e) {
+        // Not using for now
+        //$(".modal").find("input.modal-state[id^=modal-]").prop("checked", true);
+
+        // todo : try to reuse object
+        /*kalimbaMp3 = {
+          'target': {
+            'href': wavSound.url
+          },
+          'href': 'http://freshly-ground.com/data/audio/sm2/Adrian%20Glynn%20-%20Seven%20Or%20Eight%20Days.mp3'
+        };
+        window.sm2BarPlayers[0].actions.play( kalimbaMp3 ); */
+        inputTime = $("#seek-time").val();
+        window.sm2BarPlayers[0].actions.timeSeek( inputTime * 1000 );
+      });
 });
