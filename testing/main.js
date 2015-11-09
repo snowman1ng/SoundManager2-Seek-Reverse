@@ -10,7 +10,7 @@ soundManager.setup({
           id: 'aSound', // optional: provide your own unique id
          url: 'Kalimba.mp3'
      });
-
+   
      wavSound = soundManager.createSound({
           id: 'bSound', // optional: provide your own unique id
          url: 'traditional.wav'
@@ -32,12 +32,78 @@ function mp3PlayLate(){
   gotoTime(mp3Sound, 150000); // works
   mp3Sound.play();
 }
+
+//seek the position and play 
 function seekPosition(){
-	  mp3Sound.pause();
- var position  =  document.getElementById("positionText").value * 1000;
-  gotoTime(mp3Sound, position); // works
-  mp3Sound.play();
+	var res = getTime();
+	if(res == null){
+	alert("Wrong time format!");
+   document.getElementById("positionText").value  = ""	;
+	}
+	else{
+	 var position  =  (parseInt(res[0]*60)+parseInt(res[1])) * 1000;     
+		 var duration =  mp3Sound.durationEstimate;
+		 if(position > duration){
+			 var mins = parseInt(duration/60/1000);
+			 var second = parseInt(duration/1000-mins*60);
+			alert("Max duration is:   "+mins+":"+second);}
+		else{gotoTime(mp3Sound, position); // works
+          mp3Sound.play();} 
+	} 
 }
+
+//get time position from the textfield
+function getTime(){
+mp3Sound.pause();
+	var message = document.getElementById("positionText").value;
+	var re = new RegExp("[0-5]?[0-9]:[0-5]?[0-9]")
+	if (re.test(message)) {
+		return message.split(":");		 
+    } else {	
+     return null;
+}
+}
+
+	
+function increTime(){
+	var res = getTime();
+	var min = 0;
+	var sec = 0;
+	if(res != null ){
+    min = res[0];
+	sec = res[1];
+   }
+
+   if(sec ==59 ){	
+    if(min!=59){
+ 	   sec=0;
+		min++; 
+    }		
+   }
+   else{sec++;}
+document.getElementById("positionText").value  =min+":"+sec;	
+}
+
+function decreTime(){
+	var res = getTime();
+	var min = 0;
+	var sec = 0;
+	if(res != null ){
+    min = res[0];
+	sec = res[1];
+   }
+
+   if(sec == 0 ){	
+    if(min != 0){
+ 	   sec=59;
+		min--; 
+    }		
+   }
+   else{sec--;}
+document.getElementById("positionText").value  =min+":"+sec;	
+}
+
+
 /* function to Play a mp3 file */
 function mp3Play(){
   mp3Sound.pause();

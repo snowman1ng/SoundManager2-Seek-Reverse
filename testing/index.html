@@ -34,9 +34,11 @@
       	    <div class="modal-inner">
       	      <div class="modal-close" for="modal-1"></div>
       	      <h1>A pop-up text box</h1>
-      	      <p class="modal-intro">Time</p>
+      	      <p class="modal-intro">Time(sample for 5 mins:  05:00)</p>
       	      <p class="modal-content">
-                <input type="number" id="positionText" placeholder="Enter numbers">
+                <input type="text" id="positionText" maxlength = 5; placeholder="Enter numbers">
+				<input type="button" id="incre" value="+" onclick="increTime()">
+				<input type="button" id="decre" value="-" onclick="decreTime()">
 				 <input type="button"  value="Seek by second"  onclick="seekPosition()">
               </p>
       	    </div>
