@@ -239,4 +239,27 @@ ar-ui .sm2-inline-texture {
   margin: 0;
 }
 
+#crossfade-div {
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  width: 50%;
+  margin: auto;
+  overflow: auto;
+}
+
+#slider {
+  width: 30%;
+}
+
+.crossfade {
+  float: left;
+  margin: 10px;
+}
+
+#inner-crossfade {
+  width:100%;
+  margin: auto;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -7,13 +7,16 @@
         <meta charset="UTF-8">
         <title>SoundManager Testing</title>
         <link rel="stylesheet" href="css/style.css">
+         <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/jquery-ui.css">
         <!-- jQuery library for support -->
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
         <!-- soundmanager2 library -->
         <script type="text/javascript" src="../script/soundmanager2.js"></script>
         <script src="bar-ui.js"></script>
         <!-- Custom js file -->
         <script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="crossfade.js"></script>
 
 
     </head>
@@ -134,6 +137,19 @@
           </div>
 
         </div><!-- END UI BAR -->
+		
+		<!-- SLIDER BAR TO USE AS CROSSFADE BAR -->
+		<div id="crossfade-div">
+      <h2>Crossfade</h2>
+      <div id="inner-crossfade">
+        <input type="button"  class="crossfade" value="Play" onclick="mp3Play()">
+        <input type="button"  class="crossfade" value="Stop" onclick="mp3Play()">
+			   <!--<button class="crossfade">Play</button>
+         <button class="crossfade">Stop</button>-->
+         <div id="slider" class="crossfade"></div>
+         <p id="crossfade-current-num">fake</p>
+      </div>
+		</div>
 
         <footer><div>'Time36' and 'Circular Arrow' icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a><br>
                       Other icons given by the SoundManager's Bar-UI package</div></footer>
