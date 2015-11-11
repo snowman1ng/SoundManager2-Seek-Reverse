@@ -51,16 +51,20 @@ soundManager.setup({
     }
 });
 
+//queue and play both songs at once, starting them at the current volumes designated by the crossfade bar
 function crossfadePlay() {
   mp3CrossfadeSongA.pause();
   gotoTime(mp3CrossfadeSongA, 0);
+  mp3CrossfadeSongA.setVolume($("#crossfade-current-numA").val());
 
   wavCrossfadeSongB.pause();
   gotoTime(wavCrossfadeSongB, 0);
+  wavCrossfadeSongB.setVolume($("#crossfade-current-numB").val());
 
   mp3CrossfadeSongA.play();
   wavCrossfadeSongB.play();
 }
+
 
 function crossfadeStop() {
   mp3CrossfadeSongA.pause();
