@@ -9,14 +9,15 @@
         <link rel="stylesheet" href="css/style.css">
          <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/jquery-ui.css">
         <!-- jQuery library for support -->
-        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+        <script src="jquery-2.1.4.min.js"></script>
         <script src="jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
         <!-- soundmanager2 library -->
         <script type="text/javascript" src="../script/soundmanager2.js"></script>
         <script src="bar-ui.js"></script>
         <!-- Custom js file -->
         <script type="text/javascript" src="main.js"></script>
-		<script type="text/javascript" src="crossfade.js"></script>
+		    <script type="text/javascript" src="crossfade.js"></script>
 
 
     </head>
@@ -147,7 +148,14 @@
 			   <!--<button class="crossfade">Play</button>
          <button class="crossfade">Stop</button>-->
          <div id="slider" class="crossfade"></div>
-         <p id="crossfade-current-num">fake</p>
+         <br />
+         <br />
+         <label for="crossfade-current-numA">Current value song A</label>
+         <input type="text" id="crossfade-current-numA" style="border:0; color:#b9cd6d; font-weight:bold;">
+         <br />
+         <br />
+         <label for="crossfade-current-numB">Current value song B</label>
+         <input type="text" id="crossfade-current-numB" style="border:0; color:#b9cd6d; font-weight:bold;">
       </div>
 		</div>
 
