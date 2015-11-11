@@ -12,33 +12,35 @@ $(function() {
     	max: 100,
     	step: 1,
     	value: 0,
+      //currently the initial value displayed in the input box is controlled by HTML NOT Javascript
+      //so it is possible that they will not match up if any values are changed
     	start: function( event, ui ) {
-					$("#crossfade-current-numA").val(100 - ui.value);
-					$("#crossfade-current-numB").val(ui.value);
-					mp3CrossfadeSongA.setVolume($("#crossfade-current-numA").val());
-                  	wavCrossfadeSongB.setVolume($("#crossfade-current-numB").val());
-               },
-        stop: function( event, ui ) {
+					     $("#crossfade-current-numA").val(100 - ui.value);
+					     $("#crossfade-current-numB").val(ui.value);
+					     mp3CrossfadeSongA.setVolume($("#crossfade-current-numA").val());
+               wavCrossfadeSongB.setVolume($("#crossfade-current-numB").val());
+              },
+      stop: function( event, ui ) {
                   $("#crossfade-current-numA").val(100 - ui.value);
                   $("#crossfade-current-numB").val(ui.value);
                   mp3CrossfadeSongA.setVolume($("#crossfade-current-numA").val());
                   wavCrossfadeSongB.setVolume($("#crossfade-current-numB").val());
-               },
-        change: function( event, ui ) {
+              },
+      change: function( event, ui ) {
                   $("#crossfade-current-numA").val(100 - ui.value);
                   $("#crossfade-current-numB").val(ui.value);
                   mp3CrossfadeSongA.setVolume($("#crossfade-current-numA").val());
                   wavCrossfadeSongB.setVolume($("#crossfade-current-numB").val());
-               },
-        slide: function( event, ui ) {
+              },
+      slide: function( event, ui ) {
                   $("#crossfade-current-numA").val(100 - ui.value);
                   $("#crossfade-current-numB").val(ui.value);
                   mp3CrossfadeSongA.setVolume($("#crossfade-current-numA").val());
                   wavCrossfadeSongB.setVolume($("#crossfade-current-numB").val());
-               }
+              }
     });
 });
-//var currentVal = $("#slider").slider("value");
+var currentVal = $("#slider").slider("value");
 //$("#crossfade-current-numA").val(currentVal);
 //$("#crossfade-current-numB").val(CurrentVal);
 

@@ -249,7 +249,7 @@ ar-ui .sm2-inline-texture {
 }
 
 #slider {
-  width: 30%;
+  width: 50%;
 }
 
 .crossfade {
@@ -260,6 +260,11 @@ ar-ui .sm2-inline-texture {
 #inner-crossfade {
   width:100%;
   margin: auto;
+  clear: both;
+}
+
+.ui-slider-handle {
+  color: blue;
 }
 
 /*# sourceMappingURL=style.css.map */
