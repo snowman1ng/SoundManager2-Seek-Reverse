@@ -15,21 +15,34 @@ $(function() {
     	start: function( event, ui ) {
 					$("#crossfade-current-numA").val(100 - ui.value);
 					$("#crossfade-current-numB").val(ui.value);
+					mp3CrossfadeSongA.setVolume($("#crossfade-current-numA").val());
+                  	wavCrossfadeSongB.setVolume($("#crossfade-current-numB").val());
                },
         stop: function( event, ui ) {
                   $("#crossfade-current-numA").val(100 - ui.value);
                   $("#crossfade-current-numB").val(ui.value);
+                  mp3CrossfadeSongA.setVolume($("#crossfade-current-numA").val());
+                  wavCrossfadeSongB.setVolume($("#crossfade-current-numB").val());
                },
         change: function( event, ui ) {
                   $("#crossfade-current-numA").val(100 - ui.value);
                   $("#crossfade-current-numB").val(ui.value);
+                  mp3CrossfadeSongA.setVolume($("#crossfade-current-numA").val());
+                  wavCrossfadeSongB.setVolume($("#crossfade-current-numB").val());
                },
         slide: function( event, ui ) {
                   $("#crossfade-current-numA").val(100 - ui.value);
                   $("#crossfade-current-numB").val(ui.value);
+                  mp3CrossfadeSongA.setVolume($("#crossfade-current-numA").val());
+                  wavCrossfadeSongB.setVolume($("#crossfade-current-numB").val());
                }
     });
 });
+//var currentVal = $("#slider").slider("value");
+//$("#crossfade-current-numA").val(currentVal);
+//$("#crossfade-current-numB").val(CurrentVal);
+
+
 
 /* Set up soundManager */
 soundManager.setup({
