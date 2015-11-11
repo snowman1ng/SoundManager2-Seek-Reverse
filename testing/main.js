@@ -1,7 +1,5 @@
 var mp3Sound;
 var wavSound;
-var mp3CrossfadeSongA;
-var wavCrossfadeSongB;
 
 /* Set up soundManager */
 soundManager.setup({
@@ -17,16 +15,6 @@ soundManager.setup({
           id: 'bSound', // optional: provide your own unique id
          url: 'traditional.wav'
      });
-
-     mp3CrossfadeSongA = soundManager.createSound({
-          id: 'crossfadeA',
-          url: 'Kalimba.mp3'
-     });
-
-     wavCrossfadeSongB = soundManager.createSound({
-          id: 'crossfadeB',
-          url: 'traditional.wav'
-     })
   },
   ontimeout:
     function() {
@@ -187,19 +175,3 @@ $(function() {
         window.sm2BarPlayers[0].actions.timeSeek( inputTime * 1000 );
       });
 });
-
-function crossfadePlay() {
-  mp3CrossfadeSongA.pause();
-  gotoTime(mp3CrossfadeSongA, 0);
-
-  wavCrossfadeSongB.pause();
-  gotoTime(wavCrossfadeSongB, 0);
-
-  mp3CrossfadeSongA.play();
-  wavCrossfadeSongB.play();
-}
-
-function crossfadeStop() {
-  mp3CrossfadeSongA.pause();
-  wavCrossfadeSongB.pause();
-}

@@ -1,6 +1,9 @@
 //set variable reference to the slider
 var slider = $( "#slider");
 
+var mp3CrossfadeSongA;
+var wavCrossfadeSongB;
+
 //make the div into a slider, set its default values, add event listeners which 
 //update an input field based on the value of the slider
 $(function() {
@@ -27,3 +30,39 @@ $(function() {
                }
     });
 });
+
+/* Set up soundManager */
+soundManager.setup({
+  url: '/path/to/swf-files/',
+
+  onready: function() {
+     mp3CrossfadeSongA = soundManager.createSound({
+          id: 'crossfadeA',
+          url: 'Kalimba.mp3'
+     });
+
+     wavCrossfadeSongB = soundManager.createSound({
+          id: 'crossfadeB',
+          url: 'traditional.wav'
+     });
+  },
+  ontimeout:
+    function() {
+    }
+});
+
+function crossfadePlay() {
+  mp3CrossfadeSongA.pause();
+  gotoTime(mp3CrossfadeSongA, 0);
+
+  wavCrossfadeSongB.pause();
+  gotoTime(wavCrossfadeSongB, 0);
+
+  mp3CrossfadeSongA.play();
+  wavCrossfadeSongB.play();
+}
+
+function crossfadeStop() {
+  mp3CrossfadeSongA.pause();
+  wavCrossfadeSongB.pause();
+}
