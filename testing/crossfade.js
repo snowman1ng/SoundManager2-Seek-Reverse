@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+  alert("HEY");
+});
+
 //set variable reference to the slider
 var slider = $( "#slider");
 
@@ -85,3 +89,5 @@ function crossfadeStop() {
   mp3CrossfadeSongA.pause();
   wavCrossfadeSongB.pause();
 }
+
+//});
