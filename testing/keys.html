@@ -31,30 +31,61 @@
 	</p>
 
 	<script type="text/javascript">
+		/* Set up soundManager */
+		soundManager.setup({
+		  url: '/path/to/swf-files/',
+
+		  onready: function() {
+		    keyC = soundManager.createSound({
+		          id: 'keyCId', // optional: provide your own unique id
+		         url: 'resources/keys/pinkyfinger__piano-c.wav'
+		    });
+		   	keyD = soundManager.createSound({
+		          id: 'keyDId', // optional: provide your own unique id
+		         url: 'resources/keys/pinkyfinger__piano-d.wav'
+		    });
+		    keyE = soundManager.createSound({
+		          id: 'keyEId', // optional: provide your own unique id
+		         url: 'resources/keys/pinkyfinger__piano-e.wav'
+		    });
+		    keyF = soundManager.createSound({
+		          id: 'keyFId', // optional: provide your own unique id
+		         url: 'resources/keys/pinkyfinger__piano-f.wav'
+		    });
+		    keyG = soundManager.createSound({
+		          id: 'keyGId', // optional: provide your own unique id
+		         url: 'resources/keys/pinkyfinger__piano-g.wav'
+		    });
+		  },
+		  ontimeout:
+		    function() {
+		    }
+		});
+		
 		var aFlag = true;
 		var tag1 = document.getElementById("one");
 		tag1.addEventListener("mouseup", aEvent, false);
-		tag1.addEventListener("mousedown", anEvent, false);
+		tag1.addEventListener("mousedown", playC, false);
 		tag1.addEventListener("touchend", aEvent, false);
-		tag1.addEventListener("touchstart", anEvent, false);
+		tag1.addEventListener("touchstart", playC, false);
 
 		var tag2 = document.getElementById("two");
 		tag2.addEventListener("mouseup", aEvent, false);
-		tag2.addEventListener("mousedown", anEvent, false);
+		tag2.addEventListener("mousedown", playD, false);
 		tag2.addEventListener("touchend", aEvent, false);
-		tag2.addEventListener("touchstart", anEvent, false);
+		tag2.addEventListener("touchstart", playD, false);
 
 		var tag3 = document.getElementById("three");
 		tag3.addEventListener("mouseup", aEvent, false);
-		tag3.addEventListener("mousedown", anEvent, false);
+		tag3.addEventListener("mousedown", playE, false);
 		tag3.addEventListener("touchend", aEvent, false);
-		tag3.addEventListener("touchstart", anEvent, false);
+		tag3.addEventListener("touchstart", playE, false);
 
 		var tag4 = document.getElementById("four");
 		tag4.addEventListener("mouseup", aEvent, false);
-		tag4.addEventListener("mousedown", anEvent, false);
+		tag4.addEventListener("mousedown", playF, false);
 		tag4.addEventListener("touchend", aEvent, false);
-		tag4.addEventListener("touchstart", anEvent, false);
+		tag4.addEventListener("touchstart", playF, false);
 
 		function aEvent() {
 			var color = this.innerText || this.TextContent;
@@ -78,7 +109,27 @@
 				this.innerHTML = "teal";
 			}
 		}
+		function playC() {
+			keyC.play();
+			anEvent();
+		}
+		function playD() {
+			keyD.play();
+			anEvent();
+		}
+		function playE() {
+			keyE.play();
+			anEvent();
+		}
+		function playF() {
+			keyF.play();
+			anEvent();
+		}
+		function playG() {
+			keyG.play();
+			anEvent();
+		}
 	</script>
-
+	<p>I do not own these piano sound files. They belong to <a href="https://freesound.org/people/pinkyfinger/">pinkyfinger</a> at freesound.org</p>
 </body>
 </html>
