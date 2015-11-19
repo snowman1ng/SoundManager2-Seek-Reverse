@@ -1,10 +1,10 @@
 #keyboard-container {
     width: 80%;
     margin: auto;
-    height: 70%;
+    height: 700px; /*want this to be a percentage*/
     border: red solid 1px;
     position: relative;
-    /*overflow: auto;*/
+    overflow: auto;
 }
 
 .white-key {
@@ -13,14 +13,16 @@
     height: 550px; /*Want this to be a percentage*/
     position: absolute;
     top: 0px;
+    z-index: 1;
 }
 
 .black-key {
     width: 9%;
     background-color: black;
-    height: 340px;
+    height: 340px; /*want this to be a percentage*/
     position: absolute;
     top: 0px;
+    z-index: 2;
 }
 
 #key-one {
