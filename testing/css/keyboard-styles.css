@@ -1,0 +1,72 @@
+#keyboard-container {
+    width: 80%;
+    margin: auto;
+    height: 70%;
+    border: red solid 1px;
+    position: relative;
+    /*overflow: auto;*/
+}
+
+.white-key {
+    width: 14%;
+    border: black solid 1px;
+    height: 550px; /*Want this to be a percentage*/
+    position: absolute;
+    top: 0px;
+}
+
+.black-key {
+    width: 9%;
+    background-color: black;
+    height: 340px;
+    position: absolute;
+    top: 0px;
+}
+
+#key-one {
+    left: 1%; /*1-15% */ 
+}
+
+#key-two {
+    left:15%; /*15-29% */
+}
+
+#key-three {
+    left:29%; /*29-43% */
+}
+
+#key-four {
+    left:43%; /*43-57% */
+}
+
+#key-five {
+    left:57%; /*57-71% */
+}
+
+#key-six {
+    left:71%; /*71-85% */
+}
+
+#key-seven {
+    left:85%; /*85-99% */
+}
+
+#key-eight {
+    left: 10%;
+}
+
+#key-nine {
+    left:25%;
+}
+
+#key-ten {
+    left:52%
+}
+
+#key-eleven {
+    left:66.5%;
+}
+
+#key-twelve {
+    left:81%;
+}
