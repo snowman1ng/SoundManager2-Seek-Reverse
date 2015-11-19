@@ -1,16 +1,17 @@
 #keyboard-container {
     width: 80%;
     margin: auto;
-    height: 700px; /*want this to be a percentage*/
+    height: 590px; /*want this to be a percentage*/
     border: red solid 1px;
     position: relative;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 
 .white-key {
     width: 14%;
     border: black solid 1px;
-    height: 550px; /*Want this to be a percentage*/
+    /*height: 550px; /*Want this to be a percentage*/
+    height: 95%;
     position: absolute;
     top: 0px;
     z-index: 1;
@@ -19,7 +20,9 @@
 .black-key {
     width: 9%;
     background-color: black;
-    height: 340px; /*want this to be a percentage*/
+    border: black solid 1px;
+    /*height: 340px; /*want this to be a percentage*/
+    height: 58%;
     position: absolute;
     top: 0px;
     z-index: 2;
@@ -54,42 +57,64 @@
 }
 
 #key-eight {
-    left: 10%;
+    left: 10%; /*10-19%*/
 }
 
 #key-nine {
-    left:25%;
+    left:25%; /*25-34%*/
 }
 
 #key-ten {
-    left:52%
+    left:52%; /*52-61%*/
 }
 
 #key-eleven {
-    left:66.5%;
+    left:66.5%; /*66.5-75.5%*/
 }
 
 #key-twelve {
-    left:81%;
+    left:81%; /*81-90%*/
 }
 
-.key {
-    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+/*Used to turn the keys from white to pink and back again when the page loads*/
+.white-key {
+    -webkit-animation-name: initial-color-pop-w; /* Chrome, Safari, Opera */
     -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
-    animation-name: example;
+    animation-name: initial-color-pop-w;
     animation-duration: 2s;
 }
 
 /* Chrome, Safari, Opera */
-@-webkit-keyframes example {
+@-webkit-keyframes initial-color-pop-w {
     0%   {background-color: white;}
     50%  {background-color: pink;}
     100% {background-color: white;}
 }
 
 /* Standard syntax */
-@keyframes example {
+@keyframes initial-color-pop-w {
     0%   {background-color: white;}
     50%  {background-color: pink;}
     100% {background-color: white;}
+}
+
+.black-key {
+    -webkit-animation-name: initial-color-pop-b; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: initial-color-pop-b;
+    animation-duration: 2s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes initial-color-pop-b {
+    0%   {background-color: black;}
+    50%  {background-color: pink;}
+    100% {background-color: black;}
+}
+
+/* Standard syntax */
+@keyframes initial-color-pop-b {
+    0%   {background-color: black;}
+    50%  {background-color: pink;}
+    100% {background-color: black;}
 }

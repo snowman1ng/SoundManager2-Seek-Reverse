@@ -1,3 +1,5 @@
+//using the keyframe in keyboard-styles.css would be cooler to do the pink effect but I couldn't figure out how yet
+
 $( document ).ready(function() {
 	$( "#key-one").click(function() {
 		$( "#key-one").css( "background-color", "pink");
