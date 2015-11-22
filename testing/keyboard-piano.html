@@ -1,29 +1,38 @@
 <!doctype html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Keyboard</title>
         <link rel="stylesheet" href="css/keyboard-styles.css">
-        <!-- jQuery library for support -->
-        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="scripts/keyboard-piano.js"></script>
     </head>
     <body>
+        <!-- To use: follow example below. div tag with all 3 attributes are required -->
+        <!-- Modify keyboard-piano.js with your class name (if different) -->
         <div id="keyboard-container">
-            <div class="white-key key" id="key-one"></div>
-            <div class="white-key key" id="key-two"></div>
-            <div class="white-key key" id="key-three"></div>
-            <div class="white-key key" id="key-four"></div>
-            <div class="white-key key" id="key-five"></div>
-            <div class="white-key key" id="key-six"></div>
-            <div class="white-key key" id="key-seven"></div>
-            <div class="black-key key" id="key-eight"></div>
-            <div class="black-key key" id="key-nine"></div>
-            <div class="black-key key" id="key-ten"></div>
-            <div class="black-key key" id="key-eleven"></div>
-            <div class="black-key key" id="key-twelve"></div>
+            <div class="white-key key" id="key-one"     data-res="resources/keys/pinkyfinger__piano-c.wav"></div>
+            <div class="white-key key" id="key-two"     data-res="resources/keys/pinkyfinger__piano-d.wav"></div>
+            <div class="white-key key" id="key-three"   data-res="resources/keys/pinkyfinger__piano-e.wav"></div>
+            <div class="white-key key" id="key-four"    data-res="resources/keys/pinkyfinger__piano-f.wav"></div>
+            <div class="white-key key" id="key-five"    data-res="resources/keys/pinkyfinger__piano-g.wav"></div>
+            <div class="white-key key" id="key-six"     data-res="resources/keys/pinkyfinger__piano-a.wav"></div>
+            <div class="white-key key" id="key-seven"   data-res="resources/keys/pinkyfinger__piano-b.wav"></div>
+            <div class="black-key key" id="key-eight"   data-res="resources/keys/pinkyfinger__piano-c-sharp.wav"></div>
+            <div class="black-key key" id="key-nine"    data-res="resources/keys/pinkyfinger__piano-e-sharp.wav"></div>
+            <div class="black-key key" id="key-ten"     data-res="resources/keys/pinkyfinger__piano-f-sharp.wav"></div>
+            <div class="black-key key" id="key-eleven"  data-res="resources/keys/pinkyfinger__piano-g-sharp.wav"></div>
+            <div class="black-key key" id="key-twelve"  data-res="resources/keys/pinkyfinger__piano-bb.wav"></div>
         </div>
+        <h1>Piano Keyboard using SoundManager2</h1>
+        <h2>Contributed by: Keith Rasweiler, Yaotian He, Dau Lam</h2>
         <footer>
             <p><a href="index.html">Back home</a></p>
+            <p>Disclaimer: These piano samples belong to <a href="https://freesound.org/people/pinkyfinger/">pinkyfinger</a> at freesound.org</p>
         </footer>
+        <!-- jQuery library for support (This is required for usage) -->
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <!-- soundmanager2 library (This is required for usage) -->
+        <script type="text/javascript" src="../script/soundmanager2.js"></script>
+        <!-- keyboard-piano.js (This is required for usage) -->
+        <script src="scripts/keyboard-piano.js"></script>
     </body>
 </html>
