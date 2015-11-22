@@ -1,7 +1,40 @@
+/*****************************
+**  File:           keyboard-styles.css
+**  Description:    CSS file for key-piano.html. Mobile-optimized
+**  Contributors:   Keith Rasweiler, Yaotian He, Dau Lam
+**  Date:           Nov 22, 2015
+**
+*****************************/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    text-align: center;
+    font-style: italic;
+    color: #333;
+    margin-top: 0;
+}
+
+footer {
+    text-align: center;
+}
+
 #keyboard-container {
-    width: 80%;
+    width: 100%;
     margin: auto;
-    height: 590px; /*want this to be a percentage*/
+    /*height: 590px; want this to be a percentage*/
+    height: 40em;
     border: red solid 1px;
     position: relative;
     /*overflow: auto;*/
@@ -117,4 +150,33 @@
     0%   {background-color: black;}
     50%  {background-color: pink;}
     100% {background-color: black;}
+}
+
+/* medium screen */
+@media only screen and (min-width: 768px) {
+    #keyboard-container {
+        max-width: 80%;
+    }   
+}
+
+/* larger screen */
+@media only screen and (min-width: 1024px) {
+    #keyboard-container {
+        max-width: 800px;
+    }   
+}
+
+/* smart phones portrait mode */
+@media only screen and (orientation: portrait) and (min-height: 500px) {
+    #keyboard-container {
+        max-height: 500px;
+    }
+}
+
+/* smart phones landscape mode */
+@media only screen and (orientation: landscape) and (max-height: 400px) {
+    #keyboard-container {
+        max-height: 300px;
+        max-width: 80%;
+    }
 }
