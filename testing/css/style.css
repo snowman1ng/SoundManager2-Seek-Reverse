@@ -25,6 +25,7 @@ input {
   padding: 0.8em 1em;
   cursor: pointer;
   margin: 1px 1px 1px 1px;
+  -webkit-appearance: none;
 }
 ::-webkit-input-placeholder,
 moz-placeholder,

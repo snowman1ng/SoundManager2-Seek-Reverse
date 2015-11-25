@@ -48,7 +48,7 @@ var currentVal = $("#slider").slider("value");
 
 /* Set up soundManager */
 soundManager.setup({
-  url: '/path/to/swf-files/',
+  url: '../swf/',
 
   onready: function() {
      mp3CrossfadeSongA = soundManager.createSound({

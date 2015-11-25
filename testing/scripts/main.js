@@ -3,14 +3,15 @@ var wavSound;
 
 /* Set up soundManager */
 soundManager.setup({
-  url: '/path/to/swf-files/',
+  url: '../swf/',
+  useHTML5Audio: true,
 
   onready: function() {
     mp3Sound = soundManager.createSound({
           id: 'aSound', // optional: provide your own unique id
          url: 'resources/Kalimba.mp3'
      });
-   
+
      wavSound = soundManager.createSound({
           id: 'bSound', // optional: provide your own unique id
          url: 'resources/traditional.wav'
@@ -33,7 +34,7 @@ function mp3PlayLate(){
   mp3Sound.play();
 }
 
-//seek the position and play 
+//seek the position and play
 function seekPosition(){
 	var res = getTime();
 	if(res == null){
@@ -41,15 +42,15 @@ function seekPosition(){
    document.getElementById("positionText").value  = ""	;
 	}
 	else{
-	 var position  =  (parseInt(res[0]*60)+parseInt(res[1])) * 1000;     
+	 var position  =  (parseInt(res[0]*60)+parseInt(res[1])) * 1000;
 		 var duration =  mp3Sound.durationEstimate;
 		 if(position > duration){
 			 var mins = parseInt(duration/60/1000);
 			 var second = parseInt(duration/1000-mins*60);
 			alert("Max duration is:   "+mins+":"+second);}
 		else{gotoTime(mp3Sound, position); // works
-          mp3Sound.play();} 
-	} 
+          mp3Sound.play();}
+	}
 }
 
 //get time position from the textfield
@@ -58,13 +59,13 @@ mp3Sound.pause();
 	var message = document.getElementById("positionText").value;
 	var re = new RegExp("[0-5]?[0-9]:[0-5]?[0-9]")
 	if (re.test(message)) {
-		return message.split(":");		 
-    } else {	
+		return message.split(":");
+    } else {
      return null;
 }
 }
 
-	
+
 function increTime(){
 	var res = getTime();
 	var min = 0;
@@ -74,14 +75,14 @@ function increTime(){
 	sec = res[1];
    }
 
-   if(sec ==59 ){	
+   if(sec ==59 ){
     if(min!=59){
  	   sec=0;
-		min++; 
-    }		
+		min++;
+    }
    }
    else{sec++;}
-document.getElementById("positionText").value  =min+":"+sec;	
+document.getElementById("positionText").value  =min+":"+sec;
 }
 
 function decreTime(){
@@ -93,14 +94,14 @@ function decreTime(){
 	sec = res[1];
    }
 
-   if(sec == 0 ){	
+   if(sec == 0 ){
     if(min != 0){
  	   sec=59;
-		min--; 
-    }		
+		min--;
+    }
    }
    else{sec--;}
-document.getElementById("positionText").value  =min+":"+sec;	
+document.getElementById("positionText").value  =min+":"+sec;
 }
 
 
