@@ -1,3 +1,13 @@
+/*****************************
+**  File:           main.js
+**  Description:    Main Javascript file. Contains soundmanager setup for sound objects and implementations of
+**                  both supporting and new functions to extend the SoundManager2 JS Lib. 
+**                  Also contains scripts to control modal interaction.
+**  Contributors:   Keith Rasweiler, Yaotian He, Dau Lam
+**  Date:           Nov 27, 2015
+**
+*****************************/
+
 /* Global variables to hold our sound objects */
 var mp3Sound;
 var wavSound;
@@ -6,8 +16,7 @@ var oggSound;
 
 /* Set up soundManager */
 soundManager.setup({
-  // SWF Flash-fallback pathname
-  url: '../swf/',
+  url: '../swf/',         // SWF Flash-fallback pathname
   useHTML5Audio: true,
   onready: function() {
     mp3Sound = soundManager.createSound({
@@ -37,7 +46,7 @@ soundManager.setup({
 });
 
 
-/* when document is ready, load these */
+/* When document is ready, load these */
 $(function() {
   openModal();
   closeModal();
@@ -46,7 +55,7 @@ $(function() {
   /* Bar UI Player - seek time */
   $("#seek-btn").on("click", function(e) {
     inputTime = $("#seek-time").val();
-    window.sm2BarPlayers[0].actions.timeSeek( inputTime * 1000 );
+    window.sm2BarPlayers[0].actions.timeSeek( inputTime * 1000 ); // convert inputTime to milliseconds
   });
 
    $( "#disclaimer" ).toggle();

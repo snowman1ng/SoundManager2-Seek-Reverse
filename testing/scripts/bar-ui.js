@@ -945,11 +945,11 @@
       /* option to go directly to a time in the sound */
       timeSeek: function(goToTime) {
         if (!soundObject) {
-          console.log("SoundObject not yet created. Play it first.");
+          console.log("*Log: SoundObject not yet created. Play it first.");
           return false;
         }
         else {
-          console.log("Playing at " + goToTime + " milliseconds.");
+          console.log("*Log: Playing at " + goToTime + " milliseconds.");
           return soundObject.setPosition(goToTime);
         }
       },

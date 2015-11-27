@@ -44,6 +44,7 @@ else {
 }
 
 /* EVENT LISTENERS */
+/* When document is ready, load these */
 $( document ).ready(function() {
 	// Adds an event listener to keys with class 'white-key' 
 	$( "#keyboard-container > div[class^='white-key']" ).click(function() {

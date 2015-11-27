@@ -20,9 +20,10 @@
         <!-- Custom js file -->
         <script type="text/javascript" src="scripts/main.js"></script>
         <script type="text/javascript" src="scripts/bar-ui.js"></script>
-		    <script type="text/javascript" src="scripts/crossfade.js"></script>
+        <script type="text/javascript" src="scripts/crossfade.js"></script>
     </head>
     <body>
+        <!-- TESTING SOUNDMANAGER2 and VARIOUS SOUND FILE FORMATS -->
         <h1>SoundManager Testing</h1>
         <form>
             <input type="button"  value="play WAV" onclick="wavPlay()">
@@ -38,29 +39,29 @@
             <input type="button"  value="Go 60 sec in @mp3 file and play" onclick="mp3PlayLate()">
             <input type="button"  value="stop MP3" onclick="mp3Pause()">
 
-        <div class="modal">
-      	  <label for="modal-1">
-      	    <div class="modal-trigger">Input Seek Time for MP3</div>
-      	  </label>
-      	  <input class="modal-state" id="modal-1" type="checkbox" />
-      	  <div class="modal-fade-screen">
-      	    <div class="modal-inner">
-      	      <div class="modal-close" for="modal-1"></div>
-      	      <h1>Seek Time for MP3</h1>
-      	      <p class="modal-intro">Time(sample for 5 mins:  05:00)</p>
-      	      <p class="modal-content">
-                <input type="text" id="positionText" maxlength=5; placeholder="Enter Pos">
-                <input type="text" id="maxDuration" maxlength=5 placeholder="Max Duration" disabled>
-				        <input type="button" id="incre" value="+" onclick="increTime()">
-				        <input type="button" id="decre" value="-" onclick="decreTime()">
-				        <input type="button"  value="Seek by second"  onclick="seekPositionForMp3()">
-              </p>
-      	    </div>
-      	  </div>
-      	</div>
-
+            <div class="modal">
+          	  <label for="modal-1">
+          	    <div class="modal-trigger">Input Seek Time for MP3</div>
+          	  </label>
+          	  <input class="modal-state" id="modal-1" type="checkbox" />
+          	  <div class="modal-fade-screen">
+          	    <div class="modal-inner">
+          	      <div class="modal-close" for="modal-1"></div>
+          	      <h1>Seek Time for MP3</h1>
+          	      <p class="modal-intro">Time(sample for 5 mins:  05:00)</p>
+          	      <p class="modal-content">
+                    <input type="text" id="positionText" maxlength=5; placeholder="Enter Pos">
+                    <input type="text" id="maxDuration" maxlength=5 placeholder="Max Duration" disabled>
+                    <input type="button" id="incre" value="+" onclick="increTime()">
+                    <input type="button" id="decre" value="-" onclick="decreTime()">
+                    <input type="button"  value="Seek by second"  onclick="seekPositionForMp3()">
+                  </p>
+          	    </div>
+          	  </div>
+          	</div>
         </form>
-
+        
+        <!-- BARI UI PLAYER TESTING NEW FUNCTIONALTIES -->
         <h2>Sample UI Player</h2>
         <div class="sm2-bar-ui">
           <!-- Wrapper -->
@@ -130,6 +131,13 @@
                 <a href="#volume" class="sm2-inline-button sm2-volume-control">volume</a>
               </div>
             </div>
+            <!-- Menu Button -->
+            <div class="sm2-inline-element sm2-button-element sm2-menu">
+             <div class="sm2-button-bd">
+              <a href="#menu" class="sm2-inline-button menu">menu</a>
+             </div>
+            </div>
+
           </div> <!-- END CONTROLS -->
           
           <!-- Playlist of Songs -->
@@ -143,50 +151,52 @@
                 <li><a href="resources/Kalimba.mp3">Kalimba MP3</a></li>
                 <li><a href="resources/traditional.wav">Traditional WAV</a></li>
                 <li><a href="resources/quilt__orchestral-5of5.ogg">quilt's orchestral OGG</a></li>
+                <li><a href="http://freshly-ground.com/data/audio/sm2/birds-in-kauai-128kbps-aac-lc.mp4">Birds in Kauai AAC/MP4</a></li>
               </ul>
             </div>
           </div>
-
         </div><!-- END UI BAR -->
 		
-		<!-- SLIDER BAR TO USE AS CROSSFADE BAR -->
-		<div id="crossfade-div">
-      <h2>Crossfade</h2>
-      <div id="inner-crossfade">
-        <input type="button"  class="crossfade" value="Play" onclick="crossfadePlay()">
-        <input type="button"  class="crossfade" value="Stop" onclick="crossfadeStop()">
-         <div id="slider" class="crossfade"></div>
-         <br />
-         <br />
-         <label for="crossfade-current-numA">Current value song A</label>
-         <input type="text" id="crossfade-current-numA" value="100" style="border:0; color:#b9cd6d; font-weight:bold;">
-         <br />
-         <br />
-         <label for="crossfade-current-numB">Current value song B</label>
-         <input type="text" id="crossfade-current-numB" value="0" style="border:0; color:#b9cd6d; font-weight:bold;">
+  		<!-- SLIDER BAR TO USE AS CROSSFADE BAR -->
+  		<div id="crossfade-div">
+        <h2>Crossfade</h2>
+        <div id="inner-crossfade">
+          <input type="button"  class="crossfade" value="Play" onclick="crossfadePlay()">
+          <input type="button"  class="crossfade" value="Stop" onclick="crossfadeStop()">
+           <div id="slider" class="crossfade"></div>
+           <br />
+           <br />
+           <label for="crossfade-current-numA">Current value song A</label>
+           <input type="text" id="crossfade-current-numA" value="100" style="border:0; color:#b9cd6d; font-weight:bold;">
+           <br />
+           <br />
+           <label for="crossfade-current-numB">Current value song B</label>
+           <input type="text" id="crossfade-current-numB" value="0" style="border:0; color:#b9cd6d; font-weight:bold;">
+        </div>
       </div>
-		</div>
-    <br />
-    <br />
-    <p><a href="keyboard-piano.html">Go to Piano Keyboard player page</a></p>
+      <br />
+      <br />
 
-    <footer>
-      <h2>Disclaimer:</h2>
-      <div id="disclaimer">
-        <p>We not do own these materials. They belong to their respective owners.</p>
-        <h3>Icons</h3>
-        <ul>
-          <li>'Time36' and 'Circular Arrow' icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></li>
-          <li>Other icons provied by the SoundManager's <a href="http://www.schillmania.com/projects/soundmanager2/demo/bar-ui/">Bar-UI package</a></li>
-        </ul>
-        <h3>Sound Music Files</h3>
-        <ul>
-          <li>The speech sound files (mp3.mp3, wav.wav, ogg.ogg) were obtained from http://hpr.dogphilosophy.net/test/</a></li>
-          <li>Kalimba.mp3 were obtained from Windows 7 Sample Music</li>
-          <li>quilt__orchestral-5of5 were obtained from freesound.org</li>
-          <li>Other files were obtained from various sample music libraries; unknown authors</li>
-        </ul>
-      </div>
-    </footer>
+      <!-- Link to piano keyboard page -->
+      <p><a href="keyboard-piano.html">Go to Piano Keyboard player page</a></p>
+
+      <footer>
+        <h2>Disclaimer (click-me):</h2>
+        <div id="disclaimer">
+          <p>We not do own these materials. They belong to their respective owners.</p>
+          <h3>Icons</h3>
+          <ul>
+            <li>'Time36' and 'Circular Arrow' icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></li>
+            <li>Other icons provied by the SoundManager's <a href="http://www.schillmania.com/projects/soundmanager2/demo/bar-ui/">Bar-UI package</a></li>
+          </ul>
+          <h3>Sound Music Files</h3>
+          <ul>
+            <li>The speech sound files (mp3.mp3, wav.wav, ogg.ogg) were obtained from http://hpr.dogphilosophy.net/test/</a></li>
+            <li>Kalimba.mp3 were obtained from Windows 7 Sample Music</li>
+            <li>quilt__orchestral-5of5 were obtained from freesound.org</li>
+            <li>Other files were obtained from various sample music libraries; unknown authors</li>
+          </ul>
+        </div>
+      </footer>
     </body>
 </html>
