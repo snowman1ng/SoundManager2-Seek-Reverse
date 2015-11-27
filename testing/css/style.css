@@ -1,16 +1,29 @@
 @charset "UTF-8";
 @import 'bar-ui.css';
+
 html {
   box-sizing: border-box;
 }
+
 body {
   background-color: skyblue;
   font-family: sans-serif;
 }
+
 footer {
-  position: absolute;
-  bottom: 0;
+  /*position: absolute;*/
+  /*bottom: 0;*/
 }
+footer h2, footer h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+footer p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 input {
   background-color: #477DCA;
   border-radius: 3px;
@@ -27,27 +40,33 @@ input {
   margin: 1px 1px 1px 1px;
   -webkit-appearance: none;
 }
+
 ::-webkit-input-placeholder,
 moz-placeholder,
 moz-placeholder,
 ms-input-placeholder {
    color: #eee;
 }
+
 *, *::after, *::before {
   box-sizing: inherit;
 }
+
 .modal label {
   cursor: pointer;
   margin-bottom: 0;
 }
+
 .modal label img {
   border-radius: 150px;
   display: block;
   max-width: 300px;
 }
+
 .modal .modal-state {
   display: none;
 }
+
 .modal .modal-trigger {
   background-color: #477DCA;
   border-radius: 3px;
@@ -62,6 +81,7 @@ ms-input-placeholder {
   padding: 0.8em 1em;
   margin: 1px 1px 1px 1px;
 }
+
 .modal .modal-trigger:hover:not(:disabled) {
   background-color: #578ad4;
   cursor: pointer;
@@ -164,22 +184,27 @@ ms-input-placeholder {
     width: 30%; /* controls the pop-up size */
   }
 }
+
 .modal .modal-inner h1 {
   color: #333;
   margin-bottom: 0 0 0.6em 0;
   text-align: left;
   text-transform: capitalize;
 }
+
 .modal .modal-inner p {
   color: #333;
   line-height: 1.5em;
 }
+
 .modal .modal-inner .modal-intro {
   font-weight: 800;
 }
+
 .modal .modal-inner .modal-content {
   color: #333;
 }
+
 @media screen and (min-width: 40em) {
   .modal .modal-inner .modal-content {
     -webkit-columns: 2 8em;
@@ -187,19 +212,23 @@ ms-input-placeholder {
     columns: 2 8em;
   }
 }
+
 .modal .modal-inner a.cta {
   color: white;
   display: inline-block;
   margin-right: 0.5em;
   margin-top: 1em;
 }
+
 .modal .modal-inner a.cta:last-child {
   padding: 0 2em;
 }
+
 .modal .modal-state:checked + .modal-fade-screen {
   opacity: 1;
   visibility: visible;
 }
+
 .modal .modal-state:checked + .modal-fade-screen .modal-inner {
   top: 0.5em;
 }
@@ -267,5 +296,4 @@ ar-ui .sm2-inline-texture {
 .ui-slider-handle {
   color: blue;
 }
-
 /*# sourceMappingURL=style.css.map */

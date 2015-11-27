@@ -25,33 +25,41 @@
     <body>
         <h1>SoundManager Testing</h1>
         <form>
-            <input type="button"  value="play MP3" onclick="mp3Play()">
-            <input type="button"  value="Go 150 sec in @mp3 file and play" onclick="mp3PlayLate()">
-            <input type="button"  value="stop MP3" onclick="mp3Pause()">
-            <br>
             <input type="button"  value="play WAV" onclick="wavPlay()">
             <input type="button"  value="stop WAV" onclick="wavPause()">
-        </form>
+            <br>
+            <input type="button"  value="play MPEG-4 AAC" onclick="aacPlay()">
+            <input type="button"  value="stop MPEG-4 AAC" onclick="aacPause()">
+            <br>
+            <input type="button"  value="play OGG" onclick="oggPlay()">
+            <input type="button"  value="stop OGG" onclick="oggPause()">
+            <br>
+            <input type="button"  value="play MP3" onclick="mp3Play()">
+            <input type="button"  value="Go 60 sec in @mp3 file and play" onclick="mp3PlayLate()">
+            <input type="button"  value="stop MP3" onclick="mp3Pause()">
 
         <div class="modal">
       	  <label for="modal-1">
-      	    <div class="modal-trigger">Click me to input text / time?</div>
+      	    <div class="modal-trigger">Input Seek Time for MP3</div>
       	  </label>
       	  <input class="modal-state" id="modal-1" type="checkbox" />
       	  <div class="modal-fade-screen">
       	    <div class="modal-inner">
       	      <div class="modal-close" for="modal-1"></div>
-      	      <h1>A pop-up text box</h1>
+      	      <h1>Seek Time for MP3</h1>
       	      <p class="modal-intro">Time(sample for 5 mins:  05:00)</p>
       	      <p class="modal-content">
-                <input type="text" id="positionText" maxlength = 5; placeholder="Enter numbers">
+                <input type="text" id="positionText" maxlength=5; placeholder="Enter Pos">
+                <input type="text" id="maxDuration" maxlength=5 placeholder="Max Duration" disabled>
 				        <input type="button" id="incre" value="+" onclick="increTime()">
 				        <input type="button" id="decre" value="-" onclick="decreTime()">
-				        <input type="button"  value="Seek by second"  onclick="seekPosition()">
+				        <input type="button"  value="Seek by second"  onclick="seekPositionForMp3()">
               </p>
       	    </div>
       	  </div>
       	</div>
+
+        </form>
 
         <h2>Sample UI Player</h2>
         <div class="sm2-bar-ui">
@@ -161,7 +169,24 @@
     <br />
     <br />
     <p><a href="keyboard-piano.html">Go to Piano Keyboard player page</a></p>
-        <footer><div>'Time36' and 'Circular Arrow' icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a><br>
-                      Other icons given by the SoundManager's Bar-UI package</div></footer>
+
+    <footer>
+      <h2>Disclaimer:</h2>
+      <div id="disclaimer">
+        <p>We not do own these materials. They belong to their respective owners.</p>
+        <h3>Icons</h3>
+        <ul>
+          <li>'Time36' and 'Circular Arrow' icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></li>
+          <li>Other icons provied by the SoundManager's <a href="http://www.schillmania.com/projects/soundmanager2/demo/bar-ui/">Bar-UI package</a></li>
+        </ul>
+        <h3>Sound Music Files</h3>
+        <ul>
+          <li>The speech sound files (mp3.mp3, wav.wav, ogg.ogg) were obtained from http://hpr.dogphilosophy.net/test/</a></li>
+          <li>Kalimba.mp3 were obtained from Windows 7 Sample Music</li>
+          <li>quilt__orchestral-5of5 were obtained from freesound.org</li>
+          <li>Other files were obtained from various sample music libraries; unknown authors</li>
+        </ul>
+      </div>
+    </footer>
     </body>
 </html>
