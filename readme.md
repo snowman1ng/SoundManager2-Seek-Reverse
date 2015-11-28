@@ -44,16 +44,17 @@ Our implementations and demos are found in the directory testing/ and custom_doc
 </ol>
 
 ## Usage:
-Our implementations and demos are found in the directory testing/ and custom_documentation/
+<p>Our implementations and demos are found in the directory testing/ and custom_documentation/</p>
 <p><a target="_blank" href="http://babyhuey.cis.temple.edu/~tuf72877/SoundManager2-Seek-Reverse/testing/">Live Demo available</a></p>
 <p><a target="_blank" href="http://daul.me/project/sm2/testing/">And backup</a></p>
 
-<ul><p>For complete explantation, please review the comments in the html files in test/ for usage.</p>
-	<p>(Note: Modifiy the pathnames as needed. Currently they are all relative to test/)</p>
-	<p>(Note: We relied heavily on JQuery because it seamlessly handles crossbrowser issues.</p>
+<p>For complete explantation, please review the comments in the html files in test/ for usage.</p>
+<p>(Note: Modifiy the pathnames as needed. Currently they are all relative to test/)</p>
+<p>(Note: We relied heavily on JQuery because it seamlessly handles crossbrowser issues.</p>
+<ul>
 	<li>
 		<p>First, include SoundManager2 into your page like such:</p>
-		<code><script type="text/javascript" src="../script/soundmanager2.js"></script></code>
+		<code>&lt;script type="text/javascript" src="../script/soundmanager2.js"&gt;&lt;/script&gt;</code>
 	</li>
 	<li>
 		<p>Next, depending on what particular thing you want include its JS, dependencies, and/or CSS file</p>
