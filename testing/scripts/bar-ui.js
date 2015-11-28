@@ -943,15 +943,9 @@
     actions = {
 
       /* option to go directly to a time in the sound */
-      timeSeek: function(goToTime) {
-        if (!soundObject) {
-          console.log("*Log: SoundObject not yet created. Play it first.");
-          return false;
-        }
-        else {
-          console.log("*Log: Playing at " + goToTime + " milliseconds.");
-          return soundObject.setPosition(goToTime);
-        }
+      seekTo: function(inputtedTime) {
+        gotoTime(soundObject, inputtedTime);
+        soundObject.togglePause();
       },
 
       play: function(offsetOrEvent) {

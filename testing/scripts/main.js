@@ -55,7 +55,7 @@ $(function() {
   /* Bar UI Player - seek time */
   $("#seek-btn").on("click", function(e) {
     inputTime = $("#seek-time").val();
-    window.sm2BarPlayers[0].actions.timeSeek( inputTime * 1000 ); // convert inputTime to milliseconds
+    window.sm2BarPlayers[0].actions.seekTo( inputTime * 1000 ); // convert inputTime to milliseconds
   });
 
    $( "#disclaimer" ).toggle();
@@ -70,7 +70,22 @@ $(function() {
 *             time: the desired time to go to (in milliseconds) 
 *   @Return:  none */
 function gotoTime(obj, time) {
-  obj.setPosition(time);
+  var soundId = obj.id;
+  if (obj.readyState == 0) {                  // 0 = uninitialised
+    soundManager.load(soundId);               // if uninitialized, initialize and load the sound
+    console.log("*Log: Loading " + soundId);  // log
+
+    setTimeout(function() {                   // sound just loaded, so wait a bit before trying to set position
+      console.log ("*Log: Seeking to " + time);
+      obj.setPosition(time);
+    }, 100);
+  }
+  else { 
+    if (obj.playState == 1) {                 // 1 = playing or buffered
+      obj.pause();                            // if playing, pause it
+    }
+    obj.setPosition(time);
+  }   
 }
 
 /*  @function mp3PlayLate
@@ -78,7 +93,7 @@ function gotoTime(obj, time) {
 *   @Params:  none
 *   @Return:  none */
 function mp3PlayLate(){
-  mp3Sound.pause();
+  // mp3Sound.pause();
   gotoTime(mp3Sound, 60000);  // in milliseconds
   mp3Sound.play();
 }
@@ -108,7 +123,7 @@ function seekPositionForMp3(){
     }
 		else {
       console.log("*Log: position changed to: " + position);      // log
-      mp3Sound.pause();
+      // mp3Sound.pause();
       gotoTime(mp3Sound, position);                               // seek to position (time)
       mp3Sound.play();
     }

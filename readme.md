@@ -9,14 +9,15 @@
 <p>Date: 11/28/2015</p>
 
 ## Language/Tools used:
-<p>
-	<a href="https://github.com/scottschiller/SoundManager2">SoundManager2 JS Lib v2.97</a>, 
-	<a href="http://www.schillmania.com/projects/soundmanager2/demo/bar-ui/">Bar-UI Music Player</a>, 
-	HTML5, 
-	CSS3, 
-	Javascript, 
-	JQuery v1.11.3, 
-	JQuery UI</p>
+<ul>
+	<li><a href="https://github.com/scottschiller/SoundManager2">SoundManager2 JS Lib v2.97</a>, </li>
+	<li><a href="http://www.schillmania.com/projects/soundmanager2/demo/bar-ui/">Bar-UI Music Player</a>, </li>
+	<li>HTML5, </li>
+	<li>CSS3, </li>
+	<li>Javascript, </li>
+	<li>JQuery v1.11.3, </li> 
+	<li>JQuery UI </li>
+</ul>
 
 ## Usage:
 <p><a href="http://babyhuey.cis.temple.edu/~tuf72877/SoundManager2-Seek-Reverse/testing/">Live Demo available</a></p>
@@ -25,11 +26,8 @@
 ## Contributions Made:
 (Note: We decided to not modify script/soundmanager2.js at this moment to explicitly showcase our contributions.)
 <ol>
-	<li><h3>Seek Functionality<h3>
-<p>We added a function (found in test/scripts/main.js) that will allow "seek to specified time" for a particular sound object created by the library.</p>
-..* 
-```javascript
-	function gotoTime(obj, time)
-```
-</li>
+	<li><h3>Seek Functionality</h3>
+		<p>We added a function (found in test/scripts/main.js) that will allow "seek to specified time" for a particular sound object created by the library.</p>
+		<code>function gotoTime(obj, time) {...}</code>
+	</li>
 </ol>
