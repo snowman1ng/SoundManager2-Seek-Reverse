@@ -4,14 +4,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
         <title>SoundManager Testing</title>
-        <!-- custom stylesheet -->
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="css/bar-ui.css">
         <link rel="stylesheet" href="css/style.css">
         <!-- jQuery library for support -->
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <!--<script src="jquery-2.1.4.min.js"></script>-->
-        <!-- jQuery UI support -->
+        <!-- jQuery UI support, for crossfade -->
         <link rel="stylesheet" href="scripts/jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/jquery-ui.css">
         <script type="text/javascript" src="scripts/jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
         <!-- soundmanager2 library -->
@@ -19,8 +21,8 @@
 
         <!-- Custom js file -->
         <script type="text/javascript" src="scripts/main.js"></script>
-        <script type="text/javascript" src="scripts/bar-ui.js"></script>
-        <script type="text/javascript" src="scripts/crossfade.js"></script>
+        <script type="text/javascript" src="scripts/bar-ui_mod-11-28-2015.js"></script> <!-- bar-ui.css needed -->
+        <script type="text/javascript" src="scripts/crossfade.js"></script><!-- jquery UI lib needed -->
     </head>
     <body>
         <!-- TESTING SOUNDMANAGER2 and VARIOUS SOUND FILE FORMATS -->
@@ -47,8 +49,8 @@
           	  <div class="modal-fade-screen">
           	    <div class="modal-inner">
           	      <div class="modal-close" for="modal-1"></div>
-          	      <h1>Seek Time for MP3</h1>
-          	      <p class="modal-intro">Time(sample for 5 mins:  05:00)</p>
+          	      <h1>Input Time Interface</h1>
+          	      <p class="modal-intro">Time (sample for 5 mins:  05:00)</p>
           	      <p class="modal-content">
                     <input type="text" id="positionText" maxlength=5; placeholder="Enter Pos">
                     <input type="text" id="maxDuration" maxlength=5 placeholder="Max Duration" disabled>
@@ -159,23 +161,21 @@
 		
   		<!-- SLIDER BAR TO USE AS CROSSFADE BAR -->
   		<div id="crossfade-div">
-        <h2>Crossfade</h2>
         <div id="inner-crossfade">
-          <input type="button"  class="crossfade" value="Play" onclick="crossfadePlay()">
-          <input type="button"  class="crossfade" value="Stop" onclick="crossfadeStop()">
+        <h2>Crossfade</h2>
+          <input type="button"  class="crossfade-btn" value="Play" onclick="crossfadePlay()">
+          <input type="button"  class="crossfade-btn" value="Stop" onclick="crossfadeStop()">
            <div id="slider" class="crossfade"></div>
-           <br />
-           <br />
-           <label for="crossfade-current-numA">Current value song A</label>
-           <input type="text" id="crossfade-current-numA" value="100" style="border:0; color:#b9cd6d; font-weight:bold;">
-           <br />
-           <br />
-           <label for="crossfade-current-numB">Current value song B</label>
-           <input type="text" id="crossfade-current-numB" value="0" style="border:0; color:#b9cd6d; font-weight:bold;">
+           <div class="crossfade-display">
+             <label for="crossfade-current-numA">Current value song A</label>
+             <input type="text" id="crossfade-current-numA" value="100" style="border:0; color:#b9cd6d; font-weight:bold;">
+             <br />
+             <br />
+             <label for="crossfade-current-numB">Current value song B</label>
+             <input type="text" id="crossfade-current-numB" value="0" style="border:0; color:#b9cd6d; font-weight:bold;">
+          </div>
         </div>
       </div>
-      <br />
-      <br />
 
       <!-- Link to piano keyboard page -->
       <p><a href="keyboard-piano.html">Go to Piano Keyboard player page</a></p>

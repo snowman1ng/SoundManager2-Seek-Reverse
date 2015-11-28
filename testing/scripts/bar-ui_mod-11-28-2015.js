@@ -1,4 +1,7 @@
-﻿/*jslint plusplus: true, white: true, nomen: true */
+﻿/*  Modded original from scottschiller: 11-28-2015
+*   Line 947-950. Added seekTo function in actions. */
+
+/*jslint plusplus: true, white: true, nomen: true */
 /*global console, document, navigator, soundManager, window */
 
 (function(window) {
